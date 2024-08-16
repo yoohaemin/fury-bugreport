@@ -6,13 +6,7 @@ import org.apache.fury.config.CompatibleMode
 import zio.Chunk
 
 object B {
-  case object Query
-
-  case object Entity
-
-  type Payload = Query.type | Entity.type
-
-  case class KO(c: Chunk[Payload])
+  case class KO(c: Chunk[Int])
 }
 
 object Main {
@@ -33,7 +27,7 @@ object Main {
     val x =
       fury.deserialize(
         fury.serialize(
-          B.KO(Chunk(B.Query))
+          B.KO(Chunk(1))
         )
       )
 
