@@ -27,7 +27,9 @@ object Main {
       .withScalaOptimizationEnabled(true)
       .requireClassRegistration(false)
       .withRefTracking(true)
-      .withCompatibleMode(CompatibleMode.COMPATIBLE)
+      // Both fails
+      //.withCompatibleMode(CompatibleMode.SCHEMA_CONSISTENT)
+      //.withCompatibleMode(CompatibleMode.COMPATIBLE)
       .build()
 
     val x =

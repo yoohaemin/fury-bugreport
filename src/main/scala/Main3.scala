@@ -9,13 +9,9 @@ import scala.collection.immutable.ArraySeq
 object B {
   case object Query
 
-  //case object Entity
+  case class OK(c: ArraySeq[Query.type])
 
-  type Payload = Query.type //| Entity.type
-
-  case class OK(c: ArraySeq[Payload])
-
-  case class KO(c: Array[Payload])
+  case class KO(c: Array[Query.type])
 }
 
 object Main {
@@ -27,6 +23,8 @@ object Main {
       .withScalaOptimizationEnabled(true)
       .requireClassRegistration(false)
       .withRefTracking(true)
+      // SCHEMA_CONSISTENT succeeds
+      //.withCompatibleMode(CompatibleMode.SCHEMA_CONSISTENT)
       .withCompatibleMode(CompatibleMode.COMPATIBLE)
       .build()
 
