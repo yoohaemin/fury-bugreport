@@ -19,7 +19,7 @@ object Main {
       .requireClassRegistration(false)
       .suppressClassRegistrationWarnings(true)
       .withRefTracking(true)
-      .withCompatibleMode(org.apache.fury.config.CompatibleMode.COMPATIBLE)
+      //.withCompatibleMode(org.apache.fury.config.CompatibleMode.COMPATIBLE)
       .withLanguage(org.apache.fury.config.Language.JAVA)
       .build()
 
